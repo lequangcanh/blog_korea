@@ -15,10 +15,12 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "bootstrap-datepicker-rails"
 gem "devise"
-gem "bootstrap-sass"
 gem "jquery-ui-sass-rails"
 gem "config"
 gem "dotenv-rails"
+gem "jquery-rails"
+gem "font-awesome-rails"
+gem "bootstrap", "~> 4.1.3"
 
 group :development, :test do
   gem "pry-rails"
