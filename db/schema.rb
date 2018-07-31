@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180723143334) do
+ActiveRecord::Schema.define(version: 20180730140108) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "user_id"
@@ -28,15 +28,17 @@ ActiveRecord::Schema.define(version: 20180723143334) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_transaltions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "post_translations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "language_id"
     t.bigint "post_id"
     t.string "title"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["language_id"], name: "index_post_transaltions_on_language_id"
-    t.index ["post_id"], name: "index_post_transaltions_on_post_id"
+    t.bigint "user_id"
+    t.index ["language_id"], name: "index_post_translations_on_language_id"
+    t.index ["post_id"], name: "index_post_translations_on_post_id"
+    t.index ["user_id"], name: "index_post_translations_on_user_id"
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|

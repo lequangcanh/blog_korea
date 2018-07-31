@@ -1,0 +1,23 @@
+<div class="col-md-8 md-offset-2">
+  <%= form_for @post_form, url: posts_path do |f| %>
+    <div class="form-group">
+      <%= f.select :language_id, language_select, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :translation_title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_area :translation_content, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.select :status, status_select, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "create", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
