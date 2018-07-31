@@ -12,6 +12,9 @@
               <li><a href="#">Lifestyle</a></li>
               <li><a href="#">Video</a></li>
               <li><a href="contact.html">Contact</a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Logout", destroy_user_session_path %></li>
+              <% end %>
             </ul>
           </nav>
           <div class="search_container ml-auto">
