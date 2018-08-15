@@ -1,6 +1,6 @@
 module PostHelper
   def language_select
-    Language.all.collect {|language| [language.lang, language.id]}
+    Language.all.collect {|language| [language.name, language.short_name]}
   end
 
   def status_select
