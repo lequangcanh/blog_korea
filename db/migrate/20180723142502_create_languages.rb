@@ -1,7 +1,8 @@
 class CreateLanguages < ActiveRecord::Migration[5.1]
   def change
     create_table :languages do |t|
-      t.integer :lang
+      t.string :name
+      t.string :short_name
 
       t.timestamps
     end

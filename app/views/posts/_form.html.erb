@@ -1,0 +1,22 @@
+<%= form_for @post_form, url: @post_form.persisted? ? post_path(@post_form.id) : posts_path,
+  method: @post_form.persisted? ? "put" : "post" do |f| %>
+  <div class="form-group">
+    <%= f.select :language_id, language_select, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :translation_title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :translation_content, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.select :status, status_select, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "create", class: "btn btn-primary" %>
+  </div>
+<% end %>

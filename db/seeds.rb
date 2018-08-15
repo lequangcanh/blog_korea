@@ -13,6 +13,6 @@ User.create email: "english@example.com", name: "English User", password: "12345
 puts "Destroy all languages"
 Language.destroy_all
 puts "Create languages"
-Language.create lang: :vietnamese
-Language.create lang: :korean
-Language.create lang: :english
+Language.create name: "Tiếng Việt", short_name: "vi"
+Language.create name: "한국어", short_name: "kr"
+Language.create name: "English", short_name: "en"
