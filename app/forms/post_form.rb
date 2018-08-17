@@ -13,10 +13,10 @@ class PostForm
       @post = Post.find_by id: args[:id]
       @post_translation = @post.post_translations.find_by language_id: args[:language_id]
       @status = args[:status] || @post.status
-      @translation_title = args[:translation_title] || @post_translation.title
-      @translation_content = args[:translation_content] || @post_translation.content
+      @translation_title = args[:translation_title] || @post_translation&.title
+      @translation_content = args[:translation_content] || @post_translation&.content
       @language_id = args[:language_id] || @post_translation.language_id
-      @user_id = args[:user_id] || @post_translation.user.id
+      @user_id = args[:user_id] || @post_translation&.user&.id
     else
       super args
     end
@@ -73,7 +73,7 @@ class PostForm
   end
 
   def update_post
-    @post = @post.update! status: status
+    @post.update! status: status
   end
 
   def update_post_translation
